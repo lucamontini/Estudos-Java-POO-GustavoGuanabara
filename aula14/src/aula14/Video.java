@@ -20,17 +20,17 @@ public class Video implements AcoesVideo {
     // Métodos
     @Override
     public void play() {
-
+        this.reproduzindo = true;
     }
 
     @Override
     public void pause() {
-
+        this.reproduzindo = false;
     }
 
     @Override
     public void like() {
-
+        this.curtidas++;
     }
 
     // Getters and Setters
@@ -47,7 +47,9 @@ public class Video implements AcoesVideo {
     }
 
     public void setAvaliacao(int avaliacao) {
-        this.avaliacao = avaliacao;
+        int nova;
+        nova = (this.avaliacao + avaliacao) / this.views;
+        this.avaliacao = nova;
     }
 
     public int getViews() {
